@@ -1,7 +1,7 @@
 ---
-name: Anna Thompson
-position: Marketing
-image_path: https://source.unsplash.com/collection/139386/600x600?a=.png
-twitter_username: CloudCannonApp
-blurb: Anna likes long walks on the beach and buffet breakfast.
+name: Jing Qin(覃靖)
+position: Developer
+image_path: https://www.dropbox.com/s/jh7qq8bnmlwj5t9/logo.png?raw=1
+twitter_username: 
+blurb: 
 ---
