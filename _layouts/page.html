@@ -2,8 +2,13 @@
 layout: default
 ---
 
-<article class="single row gutters">
-  <h2>{{ page.title }}</h2>
+<section class="hero" style="background-image: url({% include relative-src.html src=page.image %})">
+	<div class="inner-hero text-container">
+		<div class="hero-text-container">
+			<h1>{{ page.title }}</h1>
+			<p class="subtext">{{ page.description }}</p>
+		</div>
+	</div>
+</section>
 
-  {{ content }}
-</article>
+{{ content }}
