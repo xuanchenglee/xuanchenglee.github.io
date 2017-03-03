@@ -82,7 +82,7 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
-			var renderer, scene, camera, stats;
+			var renderer, scene, camera;
 
 			var particles, uniforms;
 
@@ -164,11 +164,7 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 				raycaster = new THREE.Raycaster();
 				mouse = new THREE.Vector2();
 
-				//
-
-				stats = new Stats();
-				container.appendChild( stats.dom );
-
+		
 				//
 
 				window.addEventListener( 'resize', onWindowResize, false );
@@ -199,7 +195,6 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 				requestAnimationFrame( animate );
 
 				render();
-				stats.update();
 
 			}
 
