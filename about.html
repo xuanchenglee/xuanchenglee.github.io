@@ -30,10 +30,7 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 -->
 
 <section>
-		<script src="./js/three.js"></script>
-
-		<script src="./js/Detector.js"></script>
-		<script src="./js/stats.min.js"></script>
+		
 
 		<script type="x-shader/x-vertex" id="vertexshader">
 
@@ -136,7 +133,7 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 
 					uniforms: {
 						color:   { value: new THREE.Color( 0xffffff ) },
-						texture: { value: new THREE.TextureLoader().load( "textures/sprites/disc.png" ) }
+						texture: { value: new THREE.TextureLoader().load( "{{ site.baseurl }}/disc.png" ) }
 					},
 					vertexShader: document.getElementById( 'vertexshader' ).textContent,
 					fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
