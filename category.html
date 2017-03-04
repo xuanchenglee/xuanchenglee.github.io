@@ -30,10 +30,10 @@ layout: default
 			var effectController = {
 				showDots: true,
 				showLines: true,
-				minDistance: 150,
+				minDistance: 80,
 				limitConnections: false,
 				maxConnections: 20,
-				particleCount: 500
+				particleCount: 250
 			};
 
 			init();
@@ -54,7 +54,6 @@ layout: default
 					particles.setDrawRange( 0, particleCount );
 
 				});
-				gui.domElement.id = 'gui';
 				gui.close();
 			}
 
