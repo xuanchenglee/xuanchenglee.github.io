@@ -24,7 +24,6 @@ social:
 # Build
 
 permalink: pretty
-permalink: /:categories/:title/
 
 gems:
   - jekyll-sitemap
@@ -46,6 +45,9 @@ collections:
 paginate: 10
 paginate_path: "/blog/:num/"
 
+jekyll-archives:
+  enabled: ['categories']
+
 defaults:
   -
     scope:
@@ -57,6 +59,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  -
+    scope:
+      path: "contact-success.html"
+    values:
+      layout: "page"
 
 # -----------
 # CloudCannon
