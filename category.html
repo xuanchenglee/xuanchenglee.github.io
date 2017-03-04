@@ -4,10 +4,8 @@ description: Blog Category
 layout: default
 ---
 
-<section class="hero">
+<section id="container" style="position: absolute;top: 0px;">
 <!-- 3d -->
-		<div id="container"></div>
-
 		<script src="{{ site.baseurl }}/js/dat.gui.min.js"></script>
 		<script src="{{ site.baseurl }}/js/three.js"></script>
 		<script src="{{ site.baseurl }}/js/OrbitControls.js"></script>
@@ -273,15 +271,14 @@ layout: default
 			}
 
 		</script>
+</section>
 
 
+<section class="hero" style="background-color:transparent">
 	<div class="inner-hero text-container">
 		<div class="hero-text-container">
-			<!-- archive -->
-		<div class="pad">
-		
-		
-		{% for category in site.categories %}
+			
+			{% for category in site.categories %}
 		  <div class="archive-group">
 		    
 			{% capture category_name %}{{ category | first }}{% endcapture %}
@@ -301,16 +298,6 @@ layout: default
 			{% endfor %}
 		  </div>
 		{% endfor %}
-<!--		<a href="#github"></a>
-		{% for post in site.categories.github %}
-		 <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
-		{% endfor %}
-		
-		<a href="#tools"></a>
-		{% for post in site.categories.tools %}
-		 <li><span>{{ post.date | date_to_string }}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
-		{% endfor %}
-		-->
 		</div>
 	</div>
 </section>
