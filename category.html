@@ -6,7 +6,7 @@ layout: default
 
 <section id="container" style="position: absolute;top: 0px;">
 <!-- 3d -->
-		<div class="moveGUI"></div>
+		<div id="moveGUI"></div>
 		<script src="{{ site.baseurl }}/js/dat.gui.min.js"></script>
 		<script src="{{ site.baseurl }}/js/three.js"></script>
 		<script src="{{ site.baseurl }}/js/OrbitControls.js"></script>
@@ -55,7 +55,7 @@ layout: default
 					particles.setDrawRange( 0, particleCount );
 
 				});
-				$('.moveGUI').append($(gui.domElement));
+				document.getElementById("moveGUI").append(gui.domElement);
 				gui.close();
 			}
 
