@@ -24,6 +24,7 @@ social:
 # Build
 
 permalink: pretty
+permalink: /:categories/:title/
 
 gems:
   - jekyll-sitemap
