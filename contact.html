@@ -1,5 +1,5 @@
 ---
-title: Contact
+title: Category
 description: Send us a message to find out more!
 image: http://om6vqg6il.bkt.clouddn.com/logo.png
 ---
@@ -15,28 +15,22 @@ image: http://om6vqg6il.bkt.clouddn.com/logo.png
 
 -->
 <section class="pad">
-	<div class="text-container contact-box">
-		<form action="{{ site.baseurl }}/contact-success/" method="post" class="contact-form">
-			<input type="hidden" name="_to" value="support@cloudcannon.com">
-			<input type="text" name="_gotcha" style="display: none;">
-
-			<label for="name">Name</label>
-			<input type="text" name="name" id="name" placeholder="Enter your name...">
-
-			<label for="email">Email Address</label>
-			<input type="email" name="email" id="email" placeholder="Enter your email..." required>
-
-			<label for="message">Message</label>
-			<textarea name="message" id="message" placeholder="Enter your message..."></textarea>
-
-			<input type="submit" value="Send Message">
-		</form>
-
-		<div class="contact-details">
-			
-			<h3>Email</h3>
-			<p class="editable"><a href="mailto:support@example.com">jingqin.geek@foxmail.com</a></p>
-		</div>
-	</div>
+	<div class="container">
+	{% for category in site.categories %}
+	  <div class="archive-group">
+		{% capture category_name %}{{ category | first }}{% endcapture %}
+		<div id="#{{ category_name | slugize }}"></div>
+		<p></p>
+		
+		<h3 class="category-head">{{ category_name }}</h3>
+		<a name="{{ category_name | slugize }}"></a>
+		{% for post in site.categories[category_name] %}
+		<article class="archive-item">
+		  <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+		</article>
+		{% endfor %}
+	  </div>
+	{% endfor %}
+</div>
 </section>
 
