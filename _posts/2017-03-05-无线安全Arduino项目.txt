@@ -1,0 +1,66 @@
+---
+title: 无线安全Arduino项目
+date: 2017-03-05
+description: Remote security project built with Arduino
+categories:
+  - Arduino
+  - AWS
+image: https://source.unsplash.com/collection/375719/2000x1322?a=.png
+author_staff_member: jing
+---
+
+## Software Architecture
+![Software Architecture](http://om6vqg6il.bkt.clouddn.com/software_architecture.png)
+
+
+### AWS(Amazon Web Services) Implementation step by step
+* Create two DynamoDB tables
+* Set up S3 bucket
+* Set up SNS for email endpoint
+* Create IAM role
+* Setup API Gateway
+
+------------
+## Arduino
+Hardware required:
+1 * arduino yun board	1 * USB camera
+1* PIR motion sensor	1 * LED
+1 * micro SD card	    3 * jumper wires
+
+![Arduino](http://om6vqg6il.bkt.clouddn.com/arduino_project.png)
+
+
+1- Insert the SD card in the Arduino Yun board.
+2- Connect the camera to the USB port of the Yun.
+3- Plugin the LED in the Pin 13 and GND of the Yun.
+
+
+Refer to the following link for the further instructions:
+[set up Arduino](https://learn.adafruit.com/wireless-security-camera-arduino-yun/connections){:target="_blank"}
+
+
+Configuring Arduino Wifi:
+Refer to the following link for the further instructions:
+[wifi configuration](https://www.twilio.com/blog/2015/02/arduino-wifi-getting-started-arduino-yun.html){:target="_blank"}
+
+
+Configuring Arduino environment:
+1- Get the arduino Yun IPv4 address from arduino IDE.
+
+2- SSH into arduino Yun, install tinys3 python package for uploading image file to amazon S3.
+For the detailed information, refer to : https://www.smore.com/labs/tinys3/
+
+3- Create a folder named images in the path "/mnt/sda1/". And place the uploadImageToS3.py file from code folder which in the submitted folder under images folder. Replace the AWS access key ,secret key ,folder in s3 bucket and bucket name information in the uploadImageToS3.py file.
+
+4- Upload the arduino program to arduino Yun. Open RemoteSecuritySystem.ino from submitted file in the Arduino IDE. Replace three API address for posting location, detected information and publish SNS with your API gateway invoke URLs which have been created in the previous procedure. 
+
+5- Test the arduino hardware by open the Serial Monitor. You will see following printing statement when the motion sensor detects any motion.
+
+6- If you cannot see the above information in the console, check if there is any process you have not followed correctly. 
+
+In the end, open your elastic beanstalk instance URL in browser, you will see the page
+
+User manual
+- Provide the email address which will receive the notification email from SNS.
+- Place the device in the location where you want to be monitored.
+- Once you received the notification email from the system, check on the website. Click update button to see the latest images.
