@@ -26,11 +26,16 @@ section {
 }
 
 .min-80vh{
-	min-height: 80vh;
+	min-height: 81.5vh;
 }
 
 .padding-20{
 	padding: 20px 0px;
+}
+
+.half-height{
+	height: 50vh;
+	min-height: unset;
 }
 
 header {
