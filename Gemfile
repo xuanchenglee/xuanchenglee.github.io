@@ -9,3 +9,4 @@ group :jekyll_plugins do
 	gem 'jekyll-archives', '2.1.1'
 	gem 'jekyll-sitemap', '0.12.0'
 end
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?

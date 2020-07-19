@@ -2,13 +2,13 @@
 # Site
 
 title: Jing Qin Personal blog
-url: 
+url:
 baseurl:
 google_analytics_key:
 disqus_shortname:
 
 # Values for the jekyll-seo-tag gem
-logo: 
+logo:
 description: 覃靖个人博客
 author:
   name:
@@ -17,14 +17,14 @@ author:
 social:
   name: Personal blog
   links:
-    - 
+    -
 
 # -----
 # Build
 
 permalink: pretty
 
-gems:
+plugins:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-paginate
@@ -44,21 +44,18 @@ paginate: 10
 paginate_path: "/blog/:num/"
 
 jekyll-archives:
-  enabled: ['categories']
+  enabled: ["categories"]
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
     values:
       layout: "default"
-  -
-    scope:
+  - scope:
       type: "posts"
     values:
       layout: "post"
-  -
-    scope:
+  - scope:
       path: "contact-success.html"
     values:
       layout: "page"
@@ -81,3 +78,5 @@ social_icons:
 _comments:
   description: Text shown when sharing on social media
   blurb: Short bio or description of this person
+
+port: 4001
